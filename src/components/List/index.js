@@ -1,18 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import {MdAdd } from 'react-icons/md'
+import Card from "../Card";
 
-import { Container } from './styles';
+import { MdAdd } from "react-icons/md";
 
-export default function List() {
+import { Container } from "./styles";
+
+export default function List({ data }) {
   return (
     <Container>
-    <header>
-      <h2>Tarefas</h2>
-      <button>
-<MdAdd size={24} color="#FFF"/>
-      </button>
-    </header>
+      <header>
+        <h2>{data.title}</h2>
+        {data.creatable && (
+          <button>
+            <MdAdd size={24} color="#FFF" />
+          </button>
+        )}
+      </header>
+      <ul>
+        {data.cards.map(card => <Card key={card.id} data={card}/>)}
+      </ul>
     </Container>
   );
 }

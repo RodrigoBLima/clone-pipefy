@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import { Container, Label } from "./styles";
 
-const Card: React.FC = () => {
+function Card({ data }) {
   return (
-      <Container>
-          
-      </Container>
+    <Container>
+      <header>
+        {data.labels.map((label) => (
+          <Label key={label} color={label} />
+        ))}
+        <p>{data.content}</p>
+        <img src={data.user} alt="" />
+      </header>
+    </Container>
   );
 }
 

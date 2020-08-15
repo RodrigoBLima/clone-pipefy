@@ -1,16 +1,20 @@
-import React from 'react';
-import List from '../List'
-import { Container } from './styles';
+import React from "react";
+import { loadLists } from "../../services/api";
 
-const Board: React.FC = () => {
-  return <Container >
-<List />
-<List />
-<List />
-<List />
-<List />
+import List from "../List";
 
-  </Container>;
+import { Container } from "./styles";
+
+const lists = loadLists();
+
+function Board() {
+  return (
+    <Container>
+      {lists.map((list) => (
+        <List key={list.title} data={list} />
+      ))}
+    </Container>
+  );
 }
 
 export default Board;
