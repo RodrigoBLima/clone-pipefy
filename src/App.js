@@ -1,11 +1,15 @@
-import React from 'react';
-
+import React from "react";
+import GlobalStyles from "../src/styles/global";
+import Header from "./components/Header";
+import Board from "./components/Board";
 
 function App() {
   return (
-    <div >
-     
-    </div>
+    <>
+      <Header />
+      <Board />
+      <GlobalStyles />
+    </>
   );
 }
 
