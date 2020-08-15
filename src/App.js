@@ -3,7 +3,7 @@ import GlobalStyles from "../src/styles/global";
 import Header from "./components/Header";
 import Board from "./components/Board";
 
-import {DndProvider  } from "react-dnd";
+import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 
 function App() {

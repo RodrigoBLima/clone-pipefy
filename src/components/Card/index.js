@@ -9,6 +9,7 @@ import { Container, Label } from "./styles";
 function Card({ data, index, listIndex }) {
   const ref = useRef();
   const { move } = useContext(BoardContext);
+  
   const [{ isDragging }, dragRef] = useDrag({
     item: { type: "CARD", index, listIndex },
     collect: (monitor) => ({
